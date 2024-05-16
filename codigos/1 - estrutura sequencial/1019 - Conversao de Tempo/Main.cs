@@ -1,14 +1,16 @@
-using System; 
+using System;
+using static System.Console;
 
 // class URI {
 
     // static void Main(string[] args) { 
 
-        /**
-         * Escreva a sua solução aqui
-         * Code your solution here
-         * Escriba su solución aquí
-         */
+        int total = int.Parse(ReadLine());
+        int horas = total / 3600;
+        int minutos = (total % 3600) / 60;
+        int segundos = total % 60;
+
+        WriteLine($"{horas}:{minutos}:{segundos}");
 
     // }
 

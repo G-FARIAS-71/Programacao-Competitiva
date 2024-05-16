@@ -1,21 +1,23 @@
 import java.io.IOException;
- 
-/**
- * IMPORTANT: 
- *      O nome da classe deve ser "Main" para que a sua solução execute
- *      Class name must be "Main" for your solution to execute
- *      El nombre de la clase debe ser "Main" para que su solución ejecutar
- */
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
- 
-    public static void main(String[] args) throws IOException {
- 
-        /**
-         * Escreva a sua solução aqui
-         * Code your solution here
-         * Escriba su solución aquí
-         */
- 
+    public static void main(String[] args) {
+        int segundos = new Scanner(System.in).nextInt();
+        int[] tempos = {3600, 60, 1};
+        ArrayList<String> saidas = new ArrayList<>();
+        for (int tempo:tempos) {
+            int qntd_tempo_temp;
+            if (segundos >= tempo){
+                qntd_tempo_temp = segundos/tempo;
+                saidas.add(String.valueOf(qntd_tempo_temp));
+                segundos -= qntd_tempo_temp * tempo;
+            } else {
+                qntd_tempo_temp = 0;
+                saidas.add(String.valueOf(qntd_tempo_temp));
+            }
+        }
+        System.out.println(String.join(":", saidas));
     }
- 
 }
